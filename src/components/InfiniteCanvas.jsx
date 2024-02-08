@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const InfiniteCanvas = () => {
-  // Create an array with 120 elements (indexes 0 to 119)
   const divCount = Array.from({ length: 120 }, (_, index) => index);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const container = containerRef.current;
+      const totalWidth = divCount.length * (150 + 180) - 180;
+      const midpointWidth = totalWidth / 2;
+      container.scrollLeft = midpointWidth - container.offsetWidth / 2;
+    }
+  }, []);
 
   return (
-    <div className="h-[665px] overflow-x-auto">
-      <div className="grid grid-cols-8 gap-x-32 gap-y-4">
+    <div
+      ref={containerRef}
+      className="h-[665px] overflow-x-auto hide-scrollbar"
+    >
+      <div className="grid grid-cols-6 gap-x-[180px] gap-[30px]">
         {divCount.map((index) => (
           <div
             key={index}
-            className="h-[100px] w-[100px] rounded-[20px] bg-black"
+            className="h-[150px] w-[150px] rounded-[20px] overflow-hidden bg-black"
           ></div>
         ))}
       </div>
