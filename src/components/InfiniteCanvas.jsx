@@ -14,17 +14,19 @@ const InfiniteCanvas = () => {
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="h-[665px] overflow-x-auto hide-scrollbar"
-    >
-      <div className="grid grid-cols-6 gap-x-[180px] gap-[30px]">
-        {divCount.map((index) => (
-          <div
-            key={index}
-            className="h-[150px] w-[150px] rounded-[20px] overflow-hidden bg-black"
-          ></div>
-        ))}
+    <div className="w-[390px]">
+      <div
+        ref={containerRef}
+        className="h-[665px] overflow-x-auto hide-scrollbar"
+      >
+        <div className="grid grid-cols-6 gap-x-[180px] gap-[30px]">
+          {divCount.map((index) => (
+            <div
+              key={index}
+              className="h-[150px] w-[150px] rounded-[10px] overflow-hidden bg-black"
+            ></div>
+          ))}
+        </div>
       </div>
     </div>
   );
