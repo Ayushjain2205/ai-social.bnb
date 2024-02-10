@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@thirdweb-dev/react": "^4.4.8",
+    "@thirdweb-dev/sdk": "^4.0.35",
+    "ethers": "^5.7.2",
     "fabric": "^5.3.0",
     "next": "14.1.0",
     "react": "^18",
