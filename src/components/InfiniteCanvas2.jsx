@@ -59,7 +59,7 @@ const InfiniteCanvas2 = () => {
             <div
               key={index}
               data-index={index}
-              className="h-[150px] w-[150px] rounded-[20px] overflow-hidden lazy-load"
+              className="h-[150px] w-[150px] rounded-[8px] overflow-hidden lazy-load"
             >
               <img
                 src={getImageUrl(index, imageInView[index])}
