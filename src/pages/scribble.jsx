@@ -85,7 +85,7 @@ const ScribblePage = () => {
   };
 
   return (
-    <Page>
+    <Page back="/">
       <div className="flex flex-col items-center justify-center p-4">
         {showCanvas ? (
           <>
