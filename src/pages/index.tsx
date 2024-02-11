@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <Page>
+    <Page isGridView>
       <InfiniteCanvas2 />
     </Page>
   );
