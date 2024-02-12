@@ -1,8 +1,16 @@
 import React, { useRef, useEffect, useState } from "react";
 
 const InfiniteCanvas2 = () => {
+  const divWidth = 150; // The width of each div
+  const gapWidth = 180; // The width of the gap between divs
+  const divsPerRow = 6; // Number of divs per row
+  // Calculate the width of one row, accounting for the divs and the gaps between them
+  const rowWidth = divWidth * divsPerRow + gapWidth * (divsPerRow - 1);
+
+  // Generate the divCount array with 120 elements
   const divCount = Array.from({ length: 120 }, (_, index) => index);
   const containerRef = useRef(null);
+  // useState to track which images are in view
   const [imageInView, setImageInView] = useState(
     new Array(divCount.length).fill(false)
   );
@@ -10,10 +18,15 @@ const InfiniteCanvas2 = () => {
   useEffect(() => {
     if (containerRef.current) {
       const container = containerRef.current;
-      const totalWidth = divCount.length * (150 + 180) - 180;
-      const midpointWidth = totalWidth / 2;
-      container.scrollLeft = midpointWidth - container.offsetWidth / 2;
 
+      // Calculate the midpoint scroll position based on the width of one row
+      const midpointScrollPosition = rowWidth / 2 - container.offsetWidth / 2;
+
+      console.log(midpointScrollPosition);
+      // Set the initial scroll position to the calculated midpoint
+      container.scrollLeft = midpointScrollPosition / 2;
+
+      // Create an IntersectionObserver to track which divs are in view
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -32,9 +45,11 @@ const InfiniteCanvas2 = () => {
         }
       );
 
+      // Select all the .lazy-load elements and observe them
       const items = container.querySelectorAll(".lazy-load");
       items.forEach((item) => observer.observe(item));
 
+      // Cleanup function to unobserve the items when the component unmounts
       return () => items.forEach((item) => observer.unobserve(item));
     }
   }, []);
@@ -54,7 +69,7 @@ const InfiniteCanvas2 = () => {
         ref={containerRef}
         className="h-[665px] overflow-x-auto hide-scrollbar"
       >
-        <div className="grid grid-cols-6 gap-x-[180px] gap-[30px]">
+        <div className="grid grid-cols-6 gap-x-[180px] gap-y-[30px]">
           {divCount.map((index) => (
             <div
               key={index}
@@ -63,7 +78,7 @@ const InfiniteCanvas2 = () => {
             >
               <img
                 src={getImageUrl(index, imageInView[index])}
-                alt="Random"
+                alt={`Content ${index}`}
                 className="h-full w-full object-cover"
               />
             </div>
