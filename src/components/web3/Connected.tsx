@@ -106,7 +106,6 @@ export const Connected = () => {
           {tokenBalance?.displayValue} {tokenBalance?.symbol}
         </p>
       </div>
-      <SendFunds />
     </div>
   );
 };
