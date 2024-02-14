@@ -60,7 +60,7 @@ export const Connected = () => {
         <div className="flex flex-col justify-center items-start w-full max-w-md border border-gray-300 rounded-lg bg-white p-4 text-black">
           <h1 className="font-bold">Create Username</h1>
           <p className="mb-4">
-            create a unique username to start using the app.
+            Create a unique username to start using the app.
           </p>
           <input
             type="text"
@@ -89,13 +89,21 @@ export const Connected = () => {
 
   return (
     <div className="max-w-xl mx-auto my-8 p-6 border border-gray-300 rounded-lg bg-white text-black">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col justify-between items-center mb-4">
         <h1 className="font-bold">Welcome {usernameOfAccount}</h1>
+        <a
+          href={`https://testnet.bscscan.com/address/${address}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out text-[14px]"
+        >
+          {address}
+        </a>
         <button
           onClick={async () => {
             await disconnect();
           }}
-          className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300"
+          className="mt-4 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300"
         >
           Sign Out
         </button>
