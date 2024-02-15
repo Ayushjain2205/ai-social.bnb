@@ -1,10 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useReward } from "react-rewards";
 
 const Post = () => {
   // State to toggle comment section visibility
   const [showComments, setShowComments] = useState(false);
   // State to toggle emoji panel visibility
   const [showEmojiPanel, setShowEmojiPanel] = useState(false);
+
+  const rewardRef = useRef(null);
+
+  const [emoji, setEmoji] = useState("");
+
+  const [config, setConfig] = useState({
+    emoji: [emoji],
+    elementCount: 100,
+    spread: 150,
+    zIndex: 9999,
+    lifetime: 200,
+  });
+
+  const { reward, isAnimating } = useReward("rewardId", "emoji", config);
+
+  useEffect(() => {
+    setConfig((prevConfig) => ({
+      ...prevConfig,
+      emoji: [emoji],
+    }));
+  }, [emoji]);
+
+  const handleEmojiClick = (selectedEmoji) => {
+    // Set the emoji state to update the config for the reward effect
+    setEmoji(selectedEmoji);
+    // Trigger the reward (emoji rain) effect directly using the reward function
+    reward();
+    console.log(`Emoji clicked: ${selectedEmoji}`);
+    // Add additional actions here if needed
+  };
 
   // Function to toggle the comment section visibility
   const toggleComments = () => {
@@ -28,6 +59,8 @@ const Post = () => {
       {/* <img src="" className="mx-[10px]" alt="" /> */}
 
       <div className="mx-[10px] mt-[12px] w-[370px] h-[358px] bg-[#D9D9D9] rounded-[8px]"></div>
+      {/* Reward container */}
+      <span id="rewardId" />
       <span className="mx-[10px] mt-[3px] text-[#969695] italic text-[12px]">
         comment to generate yours.
       </span>
@@ -84,12 +117,42 @@ const Post = () => {
                     />
                   </svg>
                   <div className="flex flex-row gap-[15px] absolute top-[5px] w-full px-[14px] ">
-                    <span className="text-[24px]"> ❤️ </span>
-                    <span className="text-[24px]"> 😂 </span>
-                    <span className="text-[24px]"> 🔥</span>
-                    <span className="text-[24px]"> 😭</span>
-                    <span className="text-[24px]"> 🤩 </span>
-                    <span className="text-[24px]"> 🤮</span>
+                    <span
+                      onClick={() => handleEmojiClick("❤️")}
+                      className="text-[24px]"
+                    >
+                      ❤️
+                    </span>
+                    <span
+                      onClick={() => handleEmojiClick("😂")}
+                      className="text-[24px]"
+                    >
+                      😂
+                    </span>
+                    <span
+                      onClick={() => handleEmojiClick("🔥")}
+                      className="text-[24px]"
+                    >
+                      🔥
+                    </span>
+                    <span
+                      onClick={() => handleEmojiClick("😭")}
+                      className="text-[24px]"
+                    >
+                      😭
+                    </span>
+                    <span
+                      onClick={() => handleEmojiClick("🤩")}
+                      className="text-[24px]"
+                    >
+                      🤩
+                    </span>
+                    <span
+                      onClick={() => handleEmojiClick("🤮")}
+                      className="text-[24px]"
+                    >
+                      🤮
+                    </span>
                   </div>
                 </div>
               </div>
