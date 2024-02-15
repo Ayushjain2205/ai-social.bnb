@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
