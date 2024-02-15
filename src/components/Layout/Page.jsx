@@ -1,7 +1,12 @@
 import React from "react";
 import { useRouter } from "next/router"; // Import useRouter hook
 
-const Page = ({ children, back = false, isGridView = false }) => {
+const Page = ({
+  children,
+  back = false,
+  isGridView = false,
+  color = "#fff",
+}) => {
   const router = useRouter(); // Initialize useRouter hook
 
   const childContentClasses = isGridView
@@ -16,7 +21,10 @@ const Page = ({ children, back = false, isGridView = false }) => {
   };
 
   return (
-    <div className="relative flex flex-col items-center h-[665px] w-[390px]">
+    <div
+      className="{relative flex flex-col items-center h-[665px] w-[390px]"
+      style={{ backgroundColor: color }}
+    >
       <div className="flex flex-row w-full justify-between absolute top-0 pt-[12px] px-[16px] z-50">
         {/* Conditionally render back arrow or an empty div to maintain layout */}
         {back ? (
