@@ -6,7 +6,7 @@ const Page = ({ children, back = false, isGridView = false }) => {
 
   const childContentClasses = isGridView
     ? "absolute top-0 w-full"
-    : "mt-[56px]";
+    : "mt-[56px] w-full";
 
   // Function to handle back navigation, if back prop is provided
   const handleBackClick = () => {
