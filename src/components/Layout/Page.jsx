@@ -22,7 +22,7 @@ const Page = ({
 
   return (
     <div
-      className="{relative flex flex-col items-center h-[665px] w-[390px]"
+      className="relative flex flex-col items-center h-[665px] w-[390px]"
       style={{ backgroundColor: color }}
     >
       <div className="flex flex-row w-full justify-between absolute top-0 pt-[12px] px-[16px] z-50">
