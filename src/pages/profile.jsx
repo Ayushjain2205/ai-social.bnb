@@ -9,19 +9,16 @@ import {
   useSDK,
 } from "@thirdweb-dev/react";
 import { ACCOUNT_FACTORY_ADDRESS } from "../constants/constants";
+import { useRouter } from "next/router";
 
 const profile = () => {
   const address = useAddress();
   const sdk = useSDK();
   const disconnect = useDisconnect();
 
-  const [usernameInput, setUsernameInput] = useState("");
-  const [isRegisteringUsername, setIsRegisteringUsername] = useState(false);
+  const router = useRouter();
 
   const { contract: accountFactory } = useContract(ACCOUNT_FACTORY_ADDRESS);
-  const { data: hasUsername } = useContractRead(accountFactory, "hasUsername", [
-    address,
-  ]);
   const { data: usernameOfAccount } = useContractRead(
     accountFactory,
     "usernameOfAccount",
@@ -187,6 +184,17 @@ const profile = () => {
               </a>
             )}
           </div>
+        </div>
+        <div className="flex flex-row justify-end">
+          <button
+            onClick={async () => {
+              await disconnect();
+              router.push("/wallet");
+            }}
+            className="mx-[10px] h-[40px] w-[135px] mt-[10px] bg-black text-white rounded-lg hover:bg-gray-300"
+          >
+            Sign Out
+          </button>
         </div>
       </div>
     </Page>
