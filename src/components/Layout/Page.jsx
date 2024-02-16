@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router"; // Import useRouter hook
+import Link from "next/link";
 
 const Page = ({
   children,
@@ -19,6 +20,9 @@ const Page = ({
       router.push(back); // Navigate to the provided back link
     }
   };
+
+  const [showDropdown, setShowDropdown] = useState(false);
+  const toggleDropdown = () => setShowDropdown(!showDropdown);
 
   return (
     <div
@@ -53,7 +57,30 @@ const Page = ({
         )}
         <div className="flex flex-row gap-[20px]">
           <div className="flex flex-col w-[90px] h-[40px] rounded-full bg-[#616161]"></div>
-          <div className="flex flex-col w-[40px] h-[40px] rounded-full bg-[#616161]"></div>
+          <div className="flex flex-col items-center justify-center w-[40px] h-[40px] rounded-full bg-[#616161]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="15"
+              viewBox="0 0 17 15"
+              fill="none"
+              onClick={toggleDropdown}
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.0400391 13.3101C0.0400391 13.1111 0.119057 12.9204 0.259709 12.7797C0.400361 12.6391 0.591127 12.5601 0.790039 12.5601H15.79C15.989 12.5601 16.1797 12.6391 16.3204 12.7797C16.461 12.9204 16.54 13.1111 16.54 13.3101C16.54 13.509 16.461 13.6997 16.3204 13.8404C16.1797 13.981 15.989 14.0601 15.79 14.0601H0.790039C0.591127 14.0601 0.400361 13.981 0.259709 13.8404C0.119057 13.6997 0.0400391 13.509 0.0400391 13.3101ZM0.0400391 7.31006C0.0400391 7.11115 0.119057 6.92038 0.259709 6.77973C0.400361 6.63908 0.591127 6.56006 0.790039 6.56006H15.79C15.989 6.56006 16.1797 6.63908 16.3204 6.77973C16.461 6.92038 16.54 7.11115 16.54 7.31006C16.54 7.50897 16.461 7.69974 16.3204 7.84039C16.1797 7.98104 15.989 8.06006 15.79 8.06006H0.790039C0.591127 8.06006 0.400361 7.98104 0.259709 7.84039C0.119057 7.69974 0.0400391 7.50897 0.0400391 7.31006ZM0.0400391 1.31006C0.0400391 1.11115 0.119057 0.920381 0.259709 0.779729C0.400361 0.639076 0.591127 0.560059 0.790039 0.560059H15.79C15.989 0.560059 16.1797 0.639076 16.3204 0.779729C16.461 0.920381 16.54 1.11115 16.54 1.31006C16.54 1.50897 16.461 1.69974 16.3204 1.84039C16.1797 1.98104 15.989 2.06006 15.79 2.06006H0.790039C0.591127 2.06006 0.400361 1.98104 0.259709 1.84039C0.119057 1.69974 0.0400391 1.50897 0.0400391 1.31006Z"
+                fill="white"
+              />
+            </svg>
+            {showDropdown && (
+              <div className="flex flex-col gap-[10px] w-[150px] absolute top-[50px] right-[20px] bg-white shadow-md rounded-lg p-4 z-50">
+                <Link href="/create">Create</Link>
+                <Link href="/profile">My Profile</Link>
+                <Link href="/">Feed</Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
       <div className={childContentClasses}>{children}</div>

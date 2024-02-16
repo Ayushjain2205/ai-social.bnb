@@ -7,8 +7,7 @@ const generate = () => {
   const [isLoading, setIsLoading] = useState(false); // State to indicate loading status
 
   const fetchImageFromDalle = async () => {
-    setIsLoading(true); // Start loading
-    // Example API call (adjust according to actual API documentation)
+    setIsLoading(true);
     try {
       const response = await fetch(
         "https://api.openai.com/v1/images/generations",
