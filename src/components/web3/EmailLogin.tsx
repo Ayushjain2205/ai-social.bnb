@@ -11,6 +11,7 @@ import {
 } from "@thirdweb-dev/react";
 import { ACCOUNT_FACTORY_ADDRESS } from "../../constants/constants";
 import { useRouter } from "next/router";
+import { toast } from "react-hot-toast";
 
 export default function EmailSignIn() {
   const router = useRouter();
@@ -32,6 +33,8 @@ export default function EmailSignIn() {
   const [usernameInput, setUsernameInput] = useState<string>("");
   const [isRegisteringUsername, setIsRegisteringUsername] =
     useState<boolean>(false);
+
+  const [isVerifyingEmail, setIsVerifyingEmail] = useState<boolean>(false);
 
   const { contract: accountFactory } = useContract(ACCOUNT_FACTORY_ADDRESS);
 
@@ -81,7 +84,7 @@ export default function EmailSignIn() {
 
   const handleEmailEntered = async () => {
     if (!email) {
-      alert("Please enter an email");
+      toast.error("Please enter an email");
       return;
     }
     setState("sending_email");
@@ -91,9 +94,10 @@ export default function EmailSignIn() {
 
   const handleEmailVerification = async () => {
     if (!email || !verificationCode) {
-      alert("Please enter a verification code");
+      toast.error("Please enter a verification code");
       return;
     }
+    setIsVerifyingEmail(true);
     try {
       const personalWallet = await connect({
         strategy: "email_verification",
@@ -112,6 +116,7 @@ export default function EmailSignIn() {
     } catch (error) {
       console.log(error);
     }
+    setIsVerifyingEmail(false);
   };
 
   if (state === "sending_email") {
@@ -134,10 +139,13 @@ export default function EmailSignIn() {
             onChange={(e) => setVerificationCode(e.target.value)}
           />
           <button
-            className="w-full h-[45px] my-2 flex justify-center items-center bg-primary text-white  rounded-lg"
             onClick={handleEmailVerification}
+            disabled={isVerifyingEmail || !verificationCode}
+            className={`w-full h-[45px] my-2 flex justify-center items-center bg-primary text-white rounded-lg ${
+              isVerifyingEmail ? "opacity-50 cursor-not-allowed" : "opacity-100"
+            }`}
           >
-            Verify
+            {isVerifyingEmail ? "Verifying..." : "Verify"}
           </button>
           <a
             onClick={() => setState("init")}
