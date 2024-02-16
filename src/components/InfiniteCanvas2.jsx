@@ -71,17 +71,19 @@ const InfiniteCanvas2 = () => {
       >
         <div className="grid grid-cols-6 gap-x-[180px] gap-y-[30px]">
           {divCount.map((index) => (
-            <div
-              key={index}
-              data-index={index}
-              className="h-[150px] w-[150px] rounded-[8px] overflow-hidden lazy-load"
-            >
-              <img
-                src={getImageUrl(index, imageInView[index])}
-                alt={`Content ${index}`}
-                className="h-full w-full object-cover"
-              />
-            </div>
+            <Link href="/post">
+              <div
+                key={index}
+                data-index={index}
+                className="h-[150px] w-[150px] rounded-[8px] overflow-hidden lazy-load"
+              >
+                <img
+                  src={getImageUrl(index, imageInView[index])}
+                  alt={`Content ${index}`}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </Link>
           ))}
         </div>
       </div>

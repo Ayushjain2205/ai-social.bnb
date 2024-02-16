@@ -57,7 +57,7 @@ export default function EmailSignIn() {
 
   if (state === "sending_email") {
     return (
-      <div>
+      <div className="flex flex-col w-full h-[450px] items-center justify-center">
         <p>Sending OTP email...</p>
       </div>
     );
@@ -65,24 +65,24 @@ export default function EmailSignIn() {
 
   if (state === "email_verification") {
     return (
-      <div className="flex flex-col w-full">
-        <div className="flex flex-col justify-center items-start w-full m-auto border border-gray-300 rounded-lg bg-white p-4 text-black">
+      <div className="flex flex-col w-full h-[450px]">
+        <div className="flex flex-col justify-center items-start w-full m-auto rounded-lg bg-white p-4 text-black">
           <h3>Enter the verification code sent to your email</h3>
           <input
-            className="w-full h-10 my-4 border border-gray-300 rounded-lg p-2"
+            className="w-full h-[45px] my-4 border border-black rounded-[8px] p-2"
             placeholder="Enter verification code"
             value={verificationCode}
             onChange={(e) => setVerificationCode(e.target.value)}
           />
           <button
-            className="w-full h-10 my-2 flex justify-center items-center bg-blue-500 text-white border border-blue-500 rounded-lg"
+            className="w-full h-[45px] my-2 flex justify-center items-center bg-primary text-white  rounded-lg"
             onClick={handleEmailVerification}
           >
             Verify
           </button>
           <a
             onClick={() => setState("init")}
-            className="w-full text-center text-blue-500 cursor-pointer"
+            className="w-full text-center text-black cursor-pointer"
           >
             Go Back
           </a>
@@ -92,18 +92,18 @@ export default function EmailSignIn() {
   }
 
   return (
-    <div className="flex flex-col w-full">
-      <div className="flex flex-col justify-center items-start w-full m-auto border border-gray-300 rounded-lg bg-white p-4 text-black">
-        <h1>Sign In</h1>
+    <div className="flex flex-col w-full h-[450px] m-auto">
+      <div className="flex flex-col justify-center items-start w-full m-auto  rounded-lg bg-white p-4 text-black">
+        <h1>Enter email</h1>
         <input
           type="text"
-          className="w-[336px] h-10 my-4 border border-gray-300 rounded-lg p-2"
+          className="w-full h-10 my-4 border border-black rounded-[8px] p-2"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <button
-          className="w-full h-10 my-2 flex justify-center items-center bg-blue-500 text-white border border-blue-500 rounded-lg"
+          className="w-full h-10 my-2 flex justify-center items-center bg-primary text-white    rounded-lg"
           onClick={handleEmailEntered}
         >
           Sign In
