@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useAddress, useWallet } from "@thirdweb-dev/react";
+import { SmartWallet, useAddress, useWallet } from "@thirdweb-dev/react";
 
 const Page = ({
   children,

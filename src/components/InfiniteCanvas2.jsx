@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 
 const InfiniteCanvas2 = () => {
   const divWidth = 150; // The width of each div

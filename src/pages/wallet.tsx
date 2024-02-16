@@ -9,22 +9,16 @@ const Home = () => {
   const wallet = useWallet();
   const router = useRouter();
 
-  useEffect(() => {
-    // Check if the user is connected and has a SmartWallet instance
-    if (address && wallet instanceof SmartWallet) {
-      router.push("/");
-    }
-  }, [address, wallet, router]);
+  // useEffect(() => {
+  //   // Check if the user is connected and has a SmartWallet instance
+  //   if (address && wallet instanceof SmartWallet) {
+  //     router.push("/");
+  //   }
+  // }, [address, wallet, router]);
 
   return (
     <Page topBar={false}>
-      {!address ? (
-        <EmailSignIn />
-      ) : (
-        <>
-          <p>Connecting...</p>
-        </>
-      )}
+      <EmailSignIn />
     </Page>
   );
 };
