@@ -8,7 +8,6 @@ import {
   useSDK,
 } from "@thirdweb-dev/react";
 import { ACCOUNT_FACTORY_ADDRESS } from "../../constants/constants";
-import { SendFunds } from "./SendFunds";
 
 export const Connected = () => {
   const address = useAddress();
