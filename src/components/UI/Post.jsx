@@ -65,22 +65,23 @@ const Post = () => {
   };
   return (
     <div className="flex flex-col mt-[16px]">
-      <div className="flex flex-row gap-[8px] items-center h-[55px] w-full border-t border-b border-black px-[16px]">
+      <div className="flex flex-row gap-[8px] items-center w-full px-[16px]">
         <img src="/images/avatar.png" alt="" />
         <span className="text-[12px] font-medium"> ishikapareek</span>
       </div>
-      <p className="mx-[10px] mt-[5px] text-[14px]">
+      <p className="mx-[10px] mt-[7px] text-[14px]">
         real time photo generation.{" "}
         <span className="text-[#FF5705] font-[700]">90s fashion</span>
       </p>
+      <span className="mx-[10px] mt-[3px] text-[#969695] text-[12px]">
+        comment to view your visual on the post
+      </span>
       {/* <img src="" className="mx-[10px]" alt="" /> */}
 
       <div className="mx-[10px] mt-[12px] w-[370px] h-[358px] bg-[#D9D9D9] rounded-[8px]"></div>
       {/* Reward container */}
       <span id="rewardId" />
-      <span className="mx-[10px] mt-[3px] text-[#969695] italic text-[12px]">
-        comment to generate yours.
-      </span>
+
       <div className="flex flex-row justify-between mx-[10px] mt-[10px]">
         <div className="flex flex-row gap-[30px]">
           <svg
