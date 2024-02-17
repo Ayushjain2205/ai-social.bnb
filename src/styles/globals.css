@@ -123,3 +123,16 @@ body {
 .xPattern {
   animation: xPatternAnimation 10s infinite linear; /* Adjust the duration as needed */
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}

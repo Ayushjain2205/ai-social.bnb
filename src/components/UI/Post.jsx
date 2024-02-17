@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { useReward } from "react-rewards";
 import AudioPost from "./AudioPost";
+import DynamicImage from "./DynamicImage";
 
 const Post = ({ tag, type = "image" }) => {
   // State to toggle comment section visibility
@@ -74,21 +75,16 @@ const Post = ({ tag, type = "image" }) => {
         real time photo generation/{" "}
         <span className="text-[#FF5705] font-[700]">{tag}</span>
       </p>
-      <span className="mx-[10px] mt-[3px] text-[#969695] text-[12px]">
-        comment to view your visual on the post
-      </span>
+      {type == "dynamic" && (
+        <span className="mx-[10px] mt-[3px] text-[#969695] text-[12px]">
+          comment to view your visual on the post
+        </span>
+      )}
+
       {/* <img src="" className="mx-[10px]" alt="" /> */}
 
       <div className="flex flex-col justify-center items-center mx-[10px] mt-[12px] w-[370px] h-[358px] rounded-[8px]">
-        {type == "audio" ? (
-          <AudioPost />
-        ) : (
-          <img
-            className="rounded-[8px]"
-            src="/images/explore/EXPLORE5.png"
-            alt=""
-          />
-        )}
+        {type == "audio" ? <AudioPost /> : <DynamicImage />}
       </div>
 
       {/* Reward container */}
