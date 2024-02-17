@@ -3,8 +3,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { useReward } from "react-rewards";
 import AudioPost from "./AudioPost";
 import DynamicImage from "./DynamicImage";
+import Scribble from "./Scribble";
 
-const Post = ({ tag, type = "image" }) => {
+const Post = ({ tag, title, username, avatar, type = "image" }) => {
   // State to toggle comment section visibility
   const [showComments, setShowComments] = useState(false);
   // State to toggle emoji panel visibility
@@ -68,12 +69,11 @@ const Post = ({ tag, type = "image" }) => {
   return (
     <div className="flex flex-col mt-[16px]">
       <div className="flex flex-row gap-[8px] items-center w-full px-[16px]">
-        <img src="/images/avatar.png" alt="" />
-        <span className="text-[12px] font-medium"> ishikapareek</span>
+        <img className="h-[24px] w-[24px] rounded-full" src={avatar} alt="" />
+        <span className="text-[12px] font-medium"> {username}</span>
       </div>
       <p className="mx-[10px] mt-[7px] text-[14px]">
-        real time photo generation/{" "}
-        <span className="text-[#FF5705] font-[700]">{tag}</span>
+        {title}/ <span className="text-[#FF5705] font-[700]">{tag}</span>
       </p>
       {type == "dynamic" && (
         <span className="mx-[10px] mt-[3px] text-[#969695] text-[12px]">
@@ -82,7 +82,9 @@ const Post = ({ tag, type = "image" }) => {
       )}
 
       <div className="flex flex-col justify-center items-center mx-[10px] mt-[12px] w-[370px] h-[358px] rounded-[8px]">
-        {type == "audio" ? <AudioPost /> : <DynamicImage />}
+        {type === "audio" && <AudioPost />}
+        {type === "dynamic" && <DynamicImage />}
+        {type === "scribble" && <Scribble />}
       </div>
 
       {/* Reward container */}
