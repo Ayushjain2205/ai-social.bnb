@@ -45,7 +45,7 @@ const Page = ({
           {/* Conditionally render back arrow or an empty div to maintain layout */}
           {back ? (
             <div
-              className="flex flex-col items-center justify-center w-[40px] h-[40px] rounded-full bg-[#616161] cursor-pointer"
+              className="flex flex-col items-center justify-center w-[40px] h-[40px] rounded-full bg-[#61616170] cursor-pointer"
               onClick={handleBackClick}
             >
               <svg
@@ -68,8 +68,8 @@ const Page = ({
             <div className="w-[40px] h-[40px]"></div>
           )}
           <div className="flex flex-row gap-[20px]">
-            <div className="flex flex-col w-[90px] h-[40px] rounded-full bg-[#616161]"></div>
-            <div className="flex flex-col items-center justify-center w-[40px] h-[40px] rounded-full bg-[#616161]">
+            <div className="flex flex-col w-[90px] h-[40px] rounded-full bg-[#61616170]"></div>
+            <div className="flex flex-col items-center justify-center w-[40px] h-[40px] rounded-full bg-[#61616170]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="17"
