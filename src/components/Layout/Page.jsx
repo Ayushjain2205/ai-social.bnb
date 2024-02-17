@@ -14,12 +14,12 @@ const Page = ({
   const address = useAddress();
   const wallet = useWallet();
 
-  useEffect(() => {
-    // Check if the user is not connected or does not have a SmartWallet instance
-    if (!address || !(wallet instanceof SmartWallet)) {
-      router.push("/wallet"); // Redirect to the login page
-    }
-  }, [address, wallet, router]);
+  // useEffect(() => {
+  //   // Check if the user is not connected or does not have a SmartWallet instance
+  //   if (!address || !(wallet instanceof SmartWallet)) {
+  //     router.push("/wallet"); // Redirect to the login page
+  //   }
+  // }, [address, wallet, router]);
 
   const childContentClasses = isGridView
     ? "absolute top-0 w-full"
