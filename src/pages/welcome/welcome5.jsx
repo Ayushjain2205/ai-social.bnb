@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Link from "next/link";
 
 function InteractivePosts() {
   return (
@@ -16,9 +17,11 @@ function InteractivePosts() {
         </p>
       </div>
 
-      <button className="w-[177px] h-[45px] mt-[400px] justify-center rounded-[8px] bg-[#262626] text-[14px] text-white ">
-        explore
-      </button>
+      <Link href="/">
+        <button className="w-[177px] h-[45px] mt-[400px] justify-center rounded-[8px] bg-[#262626] text-[14px] text-white ">
+          explore
+        </button>
+      </Link>
 
       <div className="w-[390px] h-[45px] bg-[#FF5705] mt-[60px] overflow-hidden relative">
         <p className="absolute whitespace-nowrap text-[14px] text-white leading-[45px] scrolling-text">

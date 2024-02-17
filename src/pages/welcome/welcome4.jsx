@@ -1,9 +1,25 @@
-import React from "react";
-import Page from "../../components/Layout/Page";
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 
 function Customise() {
+  const router = useRouter(); // Hook to control routing
+
+  useEffect(() => {
+    // Redirect after 3 seconds
+    const timer = setTimeout(() => {
+      router.push("/welcome/welcome5"); // Change to the next welcome screen URL
+    }, 3000); // 3000 milliseconds = 3 seconds
+
+    return () => clearTimeout(timer); // Cleanup the timer when component unmounts or rerenders
+  }, [router]);
+
+  // Function to handle click event
+  const handleClick = () => {
+    router.push("/welcome/welcome5"); // Navigate to the next welcome screen
+  };
+
   return (
-    <div className="bg-[#FF5705] h-[665px]">
+    <div onClick={handleClick} className="bg-[#FF5705] h-[665px]">
       <p className="mr-[10px] text-[52px] text-black font-extrabold text-right">
         customise templates
       </p>
