@@ -2,7 +2,7 @@ import React from "react";
 
 const CreateConsume = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white h-[650px] w-[390px] ">
       <p className="text-[#FF5705] text-[80px] leading-[100px] w-[300px] h-[340px] font-extrabold ml-5 mr-5 shiver">
         CREATE + consume
       </p>

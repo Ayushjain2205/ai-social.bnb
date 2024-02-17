@@ -2,7 +2,7 @@ import React from "react";
 
 function HI() {
   return (
-    <div className=" flex flex-col justify-center items-center bg-[#FF5705] h-[665px]">
+    <div className=" flex flex-col justify-center items-center bg-[#FF5705] h-[665px] w-[390px]">
       <img
         className="mt-[180px]  w-[150px] h-[150px] blinking-element scaledown"
         src="/images/mascot1.svg"
