@@ -18,7 +18,8 @@
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
     "react-rewards": "^2.0.4",
-    "replicate": "^0.25.2"
+    "replicate": "^0.25.2",
+    "wavesurfer.js": "^7.7.3"
   },
   "devDependencies": {
     "@types/node": "^20",

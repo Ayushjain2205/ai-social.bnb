@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { useReward } from "react-rewards";
+import AudioPost from "./AudioPost";
 
 const Post = () => {
   // State to toggle comment section visibility
@@ -78,7 +79,10 @@ const Post = () => {
       </span>
       {/* <img src="" className="mx-[10px]" alt="" /> */}
 
-      <div className="mx-[10px] mt-[12px] w-[370px] h-[358px] bg-[#D9D9D9] rounded-[8px]"></div>
+      <div className="flex flex-col justify-center items-center mx-[10px] mt-[12px] w-[370px] h-[358px] rounded-[8px]">
+        <AudioPost />
+      </div>
+
       {/* Reward container */}
       <span id="rewardId" />
 
