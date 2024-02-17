@@ -66,6 +66,20 @@ const Post = ({ tag, title, username, avatar, type = "image" }) => {
     }
     setOverlayVisible(!overlayVisible);
   };
+
+  const getRemixUrl = () => {
+    switch (type) {
+      case "dynamic":
+        return "/remix-image";
+      case "scribble":
+        return "/remix-scribble";
+      case "audio":
+        return "/remix-audio";
+      default:
+        return "/remix-image";
+    }
+  };
+
   return (
     <div className="flex flex-col mt-[16px]">
       <div className="flex flex-row gap-[8px] items-center w-full px-[16px]">
@@ -198,7 +212,7 @@ const Post = ({ tag, title, username, avatar, type = "image" }) => {
           </svg>
         </div>
         <div className="flex flex-row gap-[30px]">
-          <Link href="/remix">
+          <Link href={getRemixUrl()}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="21"
