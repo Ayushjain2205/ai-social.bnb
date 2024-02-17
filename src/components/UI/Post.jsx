@@ -81,8 +81,6 @@ const Post = ({ tag, type = "image" }) => {
         </span>
       )}
 
-      {/* <img src="" className="mx-[10px]" alt="" /> */}
-
       <div className="flex flex-col justify-center items-center mx-[10px] mt-[12px] w-[370px] h-[358px] rounded-[8px]">
         {type == "audio" ? <AudioPost /> : <DynamicImage />}
       </div>

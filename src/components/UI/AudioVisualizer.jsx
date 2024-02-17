@@ -75,8 +75,8 @@ const AudioVisualizer = ({ audioUrl }) => {
   };
 
   return (
-    <div style={{ position: "relative", width: "370px", height: "300px" }}>
-      <canvas ref={canvasRef} width="370" height="300" />
+    <div className="flex flex-col items-center justify-center relative w-[370px] h-[350px]">
+      <canvas ref={canvasRef} width="370" height="350" />
       {!isPlaying && (
         <button
           onClick={initializeAudioAndVisualize}
