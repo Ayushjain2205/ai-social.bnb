@@ -5,7 +5,7 @@ import Post from "../components/UI/Post";
 const feed = () => {
   return (
     <Page>
-      <Post />
+      <Post tag="weird food" type="food" />
     </Page>
   );
 };

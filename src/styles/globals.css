@@ -101,3 +101,25 @@ body {
 .scrolling-text {
   animation: scroll 10s linear infinite;
 }
+
+@keyframes xPatternAnimation {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(50vh) translateX(50vw);
+  }
+  50% {
+    transform: translateY(0) translateX(50vw);
+  }
+  75% {
+    transform: translateY(50vh) translateX(0);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.xPattern {
+  animation: xPatternAnimation 10s infinite linear; /* Adjust the duration as needed */
+}

@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useReward } from "react-rewards";
 import AudioPost from "./AudioPost";
 
-const Post = () => {
+const Post = ({ tag, type = "image" }) => {
   // State to toggle comment section visibility
   const [showComments, setShowComments] = useState(false);
   // State to toggle emoji panel visibility
@@ -71,8 +71,8 @@ const Post = () => {
         <span className="text-[12px] font-medium"> ishikapareek</span>
       </div>
       <p className="mx-[10px] mt-[7px] text-[14px]">
-        real time photo generation.{" "}
-        <span className="text-[#FF5705] font-[700]">90s fashion</span>
+        real time photo generation/{" "}
+        <span className="text-[#FF5705] font-[700]">{tag}</span>
       </p>
       <span className="mx-[10px] mt-[3px] text-[#969695] text-[12px]">
         comment to view your visual on the post
@@ -80,13 +80,21 @@ const Post = () => {
       {/* <img src="" className="mx-[10px]" alt="" /> */}
 
       <div className="flex flex-col justify-center items-center mx-[10px] mt-[12px] w-[370px] h-[358px] rounded-[8px]">
-        <AudioPost />
+        {type == "audio" ? (
+          <AudioPost />
+        ) : (
+          <img
+            className="rounded-[8px]"
+            src="/images/explore/EXPLORE5.png"
+            alt=""
+          />
+        )}
       </div>
 
       {/* Reward container */}
       <span id="rewardId" />
 
-      <div className="flex flex-row justify-between mx-[10px] mt-[10px]">
+      <div className="flex flex-row justify-between mx-[10px] mt-[14px]">
         <div className="flex flex-row gap-[30px]">
           <svg
             onClick={toggleComments}
