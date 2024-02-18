@@ -15,7 +15,6 @@ const InfiniteCanvas = () => {
 
   // Function to randomize and repeat post thumbnails
   const randomizeAndRepeatThumbnails = (posts, totalDivs) => {
-    console.log(posts);
     let extendedThumbnails = [];
     while (extendedThumbnails.length < totalDivs) {
       const randomized = [...posts].sort(() => 0.5 - Math.random());
