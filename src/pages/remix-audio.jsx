@@ -201,9 +201,11 @@ const remix = () => {
           src={postToDisplay.thumbnail}
         />
         <div>
-          <div className="text-[12px] w-[297px]">
-            {postToDisplay.title}/
-            <span style={{ color: "#FF5705" }}>{postToDisplay.tag}</span>
+          <div className="text-[14px] w-[297px]">
+            {postToDisplay.title}/{" "}
+            <span className="text-[14px] text-primary font-[700]">
+              {postToDisplay.tag}
+            </span>
           </div>
 
           <div>
