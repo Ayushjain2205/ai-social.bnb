@@ -34,7 +34,7 @@ const Comments = () => {
       toast(
         (t) => (
           <div className="flex flex-row gap-[10px] items-center">
-            <img src="/icons/coin.svg" alt="" /> You won{" "}
+            <img src="/icons/coin.svg" alt="" /> You earned{" "}
             <span className="font-bold">5</span> coins
           </div>
         ),

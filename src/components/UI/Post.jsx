@@ -4,7 +4,7 @@ import { useReward } from "react-rewards";
 import AudioPost from "./AudioPost";
 import DynamicImage from "./DynamicImage";
 import Scribble from "./Scribble";
-import { id } from "ethers/lib/utils";
+import toast from "react-hot-toast";
 import Comments from "./Comments";
 
 const Post = ({ tag, title, username, avatar, type = "image", src, id }) => {
@@ -62,6 +62,19 @@ const Post = ({ tag, title, username, avatar, type = "image", src, id }) => {
     if (overlayVisible) {
       // Only set the emoji to 🎁 if closing the overlay
       setEmoji("🎁");
+      setTimeout(() => {
+        toast(
+          (t) => (
+            <div className="flex flex-row gap-[10px] items-center">
+              <img src="/icons/coin.svg" alt="" /> You earned{" "}
+              <span className="font-bold">5</span> coins
+            </div>
+          ),
+          {
+            duration: 3000,
+          }
+        );
+      }, 2000);
     } else {
       // Ensure the emoji is reset or set to any other value when opening the overlay
       // to avoid immediate triggering of the emoji rain due to the useEffect above.
