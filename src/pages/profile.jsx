@@ -133,18 +133,7 @@ const profile = () => {
         </div>
         <div className="flex flex-row justify-between items-center h-[60px] border-black border-y px-[38px]">
           <div className="flex flex-row items-center gap-[10px]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="28"
-              height="27"
-              viewBox="0 0 28 27"
-              fill="none"
-            >
-              <path
-                d="M13.6458 0.663086L16.8646 10.5698H27.2812L18.854 16.6925L22.0729 26.5992L13.6458 20.4766L5.21858 26.5992L8.43747 16.6925L0.0103045 10.5698H10.4269L13.6458 0.663086Z"
-                fill="#FF5705"
-              />
-            </svg>
+            <img src="/icons/coin.svg" alt="" />
             <span className="text-black text-[16px]">Earnings</span>
           </div>
           <span className="text-black text-[16px]">23</span>
