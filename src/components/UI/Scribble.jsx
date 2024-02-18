@@ -1,13 +1,9 @@
 import React from "react";
 
-const Scribble = () => {
+const Scribble = ({ src }) => {
   return (
     <div>
-      <img
-        className="rounded-[8px] "
-        src="images/scribble/scribble1.jpg"
-        alt=""
-      />
+      <img className="rounded-[8px] " src={src} alt="" />
     </div>
   );
 };

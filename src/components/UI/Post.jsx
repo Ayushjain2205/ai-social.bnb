@@ -5,7 +5,7 @@ import AudioPost from "./AudioPost";
 import DynamicImage from "./DynamicImage";
 import Scribble from "./Scribble";
 
-const Post = ({ tag, title, username, avatar, type = "image" }) => {
+const Post = ({ tag, title, username, avatar, type = "image", src }) => {
   // State to toggle comment section visibility
   const [showComments, setShowComments] = useState(false);
   // State to toggle emoji panel visibility
@@ -96,9 +96,9 @@ const Post = ({ tag, title, username, avatar, type = "image" }) => {
       )}
 
       <div className="flex flex-col justify-center items-center mx-[10px] mt-[12px] w-[370px] h-[358px] rounded-[8px]">
-        {type === "audio" && <AudioPost />}
+        {type === "audio" && <AudioPost audioUrl={src} />}
         {type === "dynamic" && <DynamicImage />}
-        {type === "scribble" && <Scribble />}
+        {type === "scribble" && <Scribble src={src} />}
       </div>
 
       {/* Reward container */}
