@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const initialComments = [
   {
@@ -29,6 +30,19 @@ const Comments = () => {
     };
     setComments([comment, ...comments]);
     setNewComment("");
+    setTimeout(() => {
+      toast(
+        (t) => (
+          <div className="flex flex-row gap-[10px] items-center">
+            <img src="/icons/coin.svg" alt="" /> You won{" "}
+            <span className="font-bold">5</span> coins
+          </div>
+        ),
+        {
+          duration: 3000,
+        }
+      );
+    }, 2000);
   };
 
   return (
