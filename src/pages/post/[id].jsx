@@ -23,7 +23,7 @@ const PostPage = () => {
   }
 
   return (
-    <Page>
+    <Page back="/">
       <Post
         id={postToDisplay.id}
         title={postToDisplay.title}

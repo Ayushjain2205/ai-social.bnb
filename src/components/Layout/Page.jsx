@@ -90,14 +90,14 @@ const Page = ({
                   fill="white"
                 />
               </svg>
-              {showDropdown && (
-                <div className="flex flex-col gap-[10px] w-[150px] absolute top-[60px] right-[20px] bg-white shadow-md rounded-lg p-4 z-50">
-                  <Link href="/">Explore</Link>
-                  <Link href="/create">Create</Link>
-                  <Link href="/profile">My Profile</Link>
-                </div>
-              )}
             </div>
+            {showDropdown && (
+              <div className="flex flex-col gap-[10px] w-[150px] absolute top-[60px] right-[20px] bg-white opacity-100 shadow-md rounded-lg p-4 z-50">
+                <Link href="/">Explore</Link>
+                <Link href="/create">Create</Link>
+                <Link href="/profile">My Profile</Link>
+              </div>
+            )}
           </div>
         </div>
       )}
