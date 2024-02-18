@@ -1,8 +1,16 @@
 import React, { useState, useCallback } from "react";
 import { toast } from "react-hot-toast";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { postData } from "../helpers/postdata";
 
 const remix = () => {
+  const router = useRouter();
+  const { id } = router.query;
+
+  // Convert the id to a number and find the post
+  const postToDisplay = postData.find((post) => post.id === parseInt(id, 10));
+
   const [prompt, setPrompt] = useState(""); // State to hold the user's input
   const [image, setImage] = useState(null); // State to hold the generated image URLs
   const [isLoading, setIsLoading] = useState(false); // State to indicate loading status
@@ -44,11 +52,15 @@ const remix = () => {
     setPrompt(""); // Clear the prompt
   };
 
+  if (!postToDisplay) {
+    return <div>Loading post details...</div>;
+  }
+
   return (
     <div className="flex flex-col mt-[16px]">
       <div className="flex flex-row w-full justify-between absolute top-0 pt-[12px] px-[16px] z-50">
         <div className="flex flex-col items-center justify-center w-[40px] h-[40px] rounded-full bg-[#616161] opacity-70 cursor-pointer">
-          <Link href="/post">
+          <Link href={`/post/${id}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -164,20 +176,26 @@ const remix = () => {
         </svg>
 
         <div className="flex flex-row gap-[8px] items-center h-[35px]  border-black px-[16px]">
-          <img className="w-[20px] h-[20px]" src="/images/avatar.png" alt="" />
-          <span className="text-[12px] font-medium"> ayushjain</span>
+          <img
+            className="w-[20px] h-[20px] rounded-full"
+            src={postToDisplay.avatar}
+            alt=""
+          />
+          <span className="text-[12px] font-medium">
+            {postToDisplay.username}
+          </span>
         </div>
       </div>
 
       <div className="flex flex-row gap-2 ml-4 mt-[8px]">
         <img
           className="rounded-4 w-[40px] h-[40px]"
-          src="/images/remixedpost.png"
+          src={postToDisplay.thumbnail}
         />
         <div>
           <div className="text-[12px] w-[297px]">
-            real time photo generation/
-            <span style={{ color: "#FF5705" }}>90s fashion</span>
+            {postToDisplay.title}/
+            <span style={{ color: "#FF5705" }}>{postToDisplay.tag}</span>
           </div>
 
           <div>

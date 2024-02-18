@@ -2,8 +2,38 @@ import React, { useEffect, useRef, useState } from "react";
 import { toast } from "react-hot-toast";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { postData } from "../helpers/postdata";
 
 const remix = () => {
+  const router = useRouter();
+  const { id } = router.query;
+
+  // Convert the id to a number and find the post
+  const postToDisplay = postData.find((post) => post.id === parseInt(id, 10));
+
+  const words = [
+    "Triangle TV",
+    "Snowman",
+    "Broken Heart",
+    "Pineapple",
+    "Cupcake",
+  ];
+
+  const [currentWord, setCurrentWord] = useState(words[0]); // Initial word
+  const wordIndexRef = useRef(0); // To keep track of the current word's index
+
+  useEffect(() => {
+    const changeWord = () => {
+      wordIndexRef.current = (wordIndexRef.current + 1) % words.length; // Move to the next word, loop back to start if at the end
+      setCurrentWord(words[wordIndexRef.current]); // Update the current word
+    };
+
+    const wordInterval = setInterval(changeWord, 30000); // Change word every 30 seconds
+
+    return () => clearInterval(wordInterval); // Cleanup on component unmount
+  }, [words]);
+
   const canvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [penColor, setPenColor] = useState("#000000"); // Initial pen color
@@ -85,6 +115,10 @@ const remix = () => {
       setCanvasSize();
     }, 0); // Timeout ensures this runs after the state update has taken effect
   };
+
+  if (!postToDisplay) {
+    return <div>Loading post details...</div>;
+  }
   return (
     <>
       <Head>
@@ -98,7 +132,7 @@ const remix = () => {
       <div className="flex flex-col mt-[16px]">
         <div className="flex flex-row w-full justify-between absolute top-0 pt-[12px] px-[16px] z-50">
           <div className="flex flex-col items-center justify-center w-[40px] h-[40px] rounded-full bg-[#616161] opacity-70 cursor-pointer">
-            <Link href="/post">
+            <Link href={`/post/${id}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -219,23 +253,25 @@ const remix = () => {
 
           <div className="flex flex-row gap-[8px] items-center h-[35px]  border-black px-[16px]">
             <img
-              className="w-[20px] h-[20px]"
-              src="/images/avatar.png"
+              className="w-[20px] h-[20px] rounded-full"
+              src={postToDisplay.avatar}
               alt=""
             />
-            <span className="text-[12px] font-medium"> ayushjain</span>
+            <span className="text-[12px] font-medium">
+              {postToDisplay.username}
+            </span>
           </div>
         </div>
 
         <div className="flex flex-row gap-2 ml-4 mt-[8px]">
           <img
             className="rounded-4 w-[40px] h-[40px]"
-            src="/images/remixedpost.png"
+            src={postToDisplay.thumbnail}
           />
           <div>
             <div className="text-[12px] w-[297px]">
-              real time photo generation/
-              <span style={{ color: "#FF5705" }}>90s fashion</span>
+              {postToDisplay.title}/
+              <span style={{ color: "#FF5705" }}>{postToDisplay.tag}</span>
             </div>
 
             <div>
@@ -294,6 +330,7 @@ const remix = () => {
             onChange={(e) => setPenWidth(e.target.value)}
             className="w-32"
           />
+          <span className="text-primary font-[500]">{currentWord}</span>
         </div>
 
         {/* post button and redo */}

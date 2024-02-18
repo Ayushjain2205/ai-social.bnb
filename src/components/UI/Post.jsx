@@ -4,8 +4,9 @@ import { useReward } from "react-rewards";
 import AudioPost from "./AudioPost";
 import DynamicImage from "./DynamicImage";
 import Scribble from "./Scribble";
+import { id } from "ethers/lib/utils";
 
-const Post = ({ tag, title, username, avatar, type = "image", src }) => {
+const Post = ({ tag, title, username, avatar, type = "image", src, id }) => {
   // State to toggle comment section visibility
   const [showComments, setShowComments] = useState(false);
   // State to toggle emoji panel visibility
@@ -70,13 +71,13 @@ const Post = ({ tag, title, username, avatar, type = "image", src }) => {
   const getRemixUrl = () => {
     switch (type) {
       case "dynamic":
-        return "/remix-image";
+        return "/remix-image?id=" + id;
       case "scribble":
-        return "/remix-scribble";
+        return "/remix-scribble?id=" + id;
       case "audio":
-        return "/remix-audio";
+        return "/remix-audio?id=" + id;
       default:
-        return "/remix-image";
+        return "/remix-image?id=" + id;
     }
   };
 

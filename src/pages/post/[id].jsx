@@ -25,6 +25,7 @@ const PostPage = () => {
   return (
     <Page>
       <Post
+        id={postToDisplay.id}
         title={postToDisplay.title}
         tag={postToDisplay.tag}
         type={postToDisplay.type}
