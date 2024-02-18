@@ -25,16 +25,19 @@ const create = () => {
           name="TUNESSSSS"
           description="users generate fun audio of all genres"
           imageUrl="/images/create/create1.svg"
+          type="audio"
         />
         <CreateCard
           name="REAL TIME VISUALS"
           description="Users comment a word and this model generates that image in real time."
           imageUrl="/images/create/create2.svg"
+          type="image"
         />
         <CreateCard
           name="SCRIBBLIO"
           description="Users draw randomly generated prompts and guess what other people drew."
           imageUrl="/images/create/create3.svg"
+          type="image"
         />
       </div>
     </Page>
