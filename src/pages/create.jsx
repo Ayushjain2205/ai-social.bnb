@@ -22,8 +22,8 @@ const create = () => {
         className="flex hide-scrollbar gap-[20px] overflow-x-scroll mt-[50px] "
       >
         <CreateCard
-          name="MUSIC"
-          description="Users comment a word and this model generates that image in real time."
+          name="TUNESSSSS"
+          description="users generate fun audio of all genres"
           imageUrl="/images/create/create1.svg"
         />
         <CreateCard
@@ -33,7 +33,7 @@ const create = () => {
         />
         <CreateCard
           name="SCRIBBLIO"
-          description="Users comment a word and this model generates that image in real time."
+          description="Users draw randomly generated prompts and guess what other people drew."
           imageUrl="/images/create/create3.svg"
         />
       </div>
