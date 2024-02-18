@@ -17,8 +17,9 @@ export const postData = [
     type: "dynamic",
     username: "iyushjain",
     avatar: "https://picsum.photos/id/91/200",
-    src: "https://replicate.delivery/pbxt/SCiO1SBkqj7gL5cTsq8AXz5pIwPajeiWbb9s17KtyQ2G3OFIA/gen_sound.wav",
-    thumbnail: "/images/explore/EXPLORE2.png",
+    src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285178/feed/explore/dvqjntoppsntslkshwhh.png",
+    thumbnail:
+      "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285178/feed/explore/dvqjntoppsntslkshwhh.png",
   },
   {
     id: 3,
@@ -143,7 +144,7 @@ export const postData = [
   },
   {
     id: 14,
-    title: "scribble your mind out",
+    title: "scribble your mind",
     tag: "words keep changing",
     type: "scribble",
     username: "iyushjain",
@@ -154,7 +155,7 @@ export const postData = [
   },
   {
     id: 15,
-    title: "scribble your mind out",
+    title: "scribble your mind",
     tag: "words keep changing",
     type: "scribble",
     username: "iyushjain",
@@ -162,21 +163,10 @@ export const postData = [
     src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285174/feed/explore/z4hsti4tplciieov9aqs.png",
     thumbnail:
       "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285174/feed/explore/z4hsti4tplciieov9aqs.png",
-  },
-  {
-    id: 15,
-    title: "real time photo generation",
-    tag: "appocalypse now",
-    type: "dynamic",
-    username: "issuepissue",
-    avatar: "https://picsum.photos/id/110/200",
-    src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285176/feed/explore/tnpux8vumljcdboyllht.png",
-    thumbnail:
-      "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285176/feed/explore/tnpux8vumljcdboyllht.png",
   },
   {
     id: 16,
-    title: "scribble your mind out",
+    title: "scribble your mind",
     tag: "words keep changing",
     type: "scribble",
     username: "iyushjain",
@@ -187,7 +177,7 @@ export const postData = [
   },
   {
     id: 17,
-    title: "scribble your mind out",
+    title: "scribble your mind",
     tag: "words keep changing",
     type: "scribble",
     username: "iyushjain",
@@ -209,7 +199,7 @@ export const postData = [
   },
   {
     id: 19,
-    title: "scribble your mind out",
+    title: "scribble your mind",
     tag: "words keep changing",
     type: "scribble",
     username: "iyushjain",
@@ -283,5 +273,16 @@ export const postData = [
     src: "https://replicate.delivery/pbxt/SCiO1SBkqj7gL5cTsq8AXz5pIwPajeiWbb9s17KtyQ2G3OFIA/gen_sound.wav",
     thumbnail:
       "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708289215/feed/explore/evpr8h4qqphtl8tnhmbo.png",
+  },
+  {
+    id: 25,
+    title: "real time photo generation",
+    tag: "appocalypse now",
+    type: "dynamic",
+    username: "issuepissue",
+    avatar: "https://picsum.photos/id/110/200",
+    src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285176/feed/explore/tnpux8vumljcdboyllht.png",
+    thumbnail:
+      "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285176/feed/explore/tnpux8vumljcdboyllht.png",
   },
 ];

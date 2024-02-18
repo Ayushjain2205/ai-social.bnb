@@ -197,7 +197,7 @@ const remix = () => {
       {/* profile & caption */}
       <div className="flex flex-row gap-2 ml-4 mt-[8px]">
         <img
-          className="rounded-4 w-[40px] h-[40px]"
+          className="border border-black rounded-[2px] rounded-4 w-[40px] h-[40px]"
           src={postToDisplay.thumbnail}
         />
         <div>

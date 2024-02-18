@@ -265,13 +265,15 @@ const remix = () => {
 
         <div className="flex flex-row gap-2 ml-4 mt-[8px]">
           <img
-            className="rounded-4 w-[40px] h-[40px]"
+            className="border border-black rounded-[2px] rounded-4 w-[40px] h-[40px]"
             src={postToDisplay.thumbnail}
           />
           <div>
-            <div className="text-[12px] w-[297px]">
-              {postToDisplay.title}/
-              <span style={{ color: "#FF5705" }}>{postToDisplay.tag}</span>
+            <div className="text-[14px] w-[297px]">
+              {postToDisplay.title}/{" "}
+              <span className="text-[14px] text-primary font-[700]">
+                {postToDisplay.tag}
+              </span>
             </div>
 
             <div>
