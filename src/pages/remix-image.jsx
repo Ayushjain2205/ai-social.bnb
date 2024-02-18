@@ -22,6 +22,11 @@ const remix = () => {
     }
 
     setIsLoading(true);
+    // Append the fixed prompt text to the user's input before sending
+    const fullPrompt =
+      prompt +
+      " 'Ice Cream Burger Delight': Imagine a savory beef burger where the patty is sandwiched not between regular buns, but between two thick slices of sweet, creamy vanilla ice cream. The contrasting temperatures and flavors of hot, juicy meat and cold, sweet ice cream create a perplexing yet intriguing taste experience, served with a side of crispy bacon for an added salty crunch.";
+
     try {
       const response = await fetch(
         "https://api.openai.com/v1/images/generations",
@@ -31,7 +36,7 @@ const remix = () => {
             "Content-Type": "application/json",
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`, // Ensure correct API key
           },
-          body: JSON.stringify({ prompt }),
+          body: JSON.stringify({ prompt: fullPrompt }), // Use the combined prompt
         }
       );
 
@@ -43,7 +48,7 @@ const remix = () => {
       console.error("Error fetching image:", error);
     } finally {
       setIsLoading(false);
-      setPrompt(""); // Clear prompt after fetching
+      // Do not clear prompt here if you want to keep user input visible
     }
   }, [prompt]);
 
