@@ -1,30 +1,47 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import Xpattern from "./UI/Xpattern";
+import { postData } from "../helpers/postdata";
 
 const InfiniteCanvas = () => {
-  const divCount = Array.from({ length: 120 }, (_, index) => index);
-  const containerRef = useRef(null);
+  const [showXPattern, setShowXPattern] = useState(true);
 
   useEffect(() => {
-    if (containerRef.current) {
-      const container = containerRef.current;
-      const totalWidth = divCount.length * (150 + 180) - 180;
-      const midpointWidth = totalWidth / 2;
-      container.scrollLeft = midpointWidth - container.offsetWidth / 2;
-    }
+    const timer = setTimeout(() => {
+      setShowXPattern(false);
+    }, 7000);
+    return () => clearTimeout(timer);
   }, []);
 
+  // Function to randomize and repeat post thumbnails
+  const randomizeAndRepeatThumbnails = (posts, totalDivs) => {
+    console.log(posts);
+    let extendedThumbnails = [];
+    while (extendedThumbnails.length < totalDivs) {
+      const randomized = [...posts].sort(() => 0.5 - Math.random());
+      extendedThumbnails = [...extendedThumbnails, ...randomized];
+    }
+    return extendedThumbnails.slice(0, totalDivs);
+  };
+
+  const divCount = 120; // Define the total number of divs/thumbnails you want to display
+  const randomizedThumbnails = randomizeAndRepeatThumbnails(postData, divCount);
+
   return (
-    <div className="w-[390px]">
-      <div
-        ref={containerRef}
-        className="h-[665px] overflow-x-auto hide-scrollbar"
-      >
-        <div className="grid grid-cols-6 gap-x-[180px] gap-[30px]">
-          {divCount.map((index) => (
-            <div
-              key={index}
-              className="h-[150px] w-[150px] rounded-[10px] overflow-hidden bg-black"
-            ></div>
+    <div className="relative w-[390px]">
+      {showXPattern && <Xpattern />}
+      <div className="h-[665px] overflow-x-auto hide-scrollbar">
+        <div className="grid grid-cols-6 gap-x-[180px] gap-y-[30px]">
+          {randomizedThumbnails.map((post, index) => (
+            <Link href={`/post/${post.id}`} key={index}>
+              <div className="block h-[150px] w-[150px] rounded-[8px] overflow-hidden">
+                <img
+                  src={post.thumbnail}
+                  alt={`Content ${post.title}`}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </Link>
           ))}
         </div>
       </div>

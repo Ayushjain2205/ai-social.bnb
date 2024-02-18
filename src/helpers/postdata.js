@@ -7,7 +7,7 @@ export const postData = [
     username: "iyushjain",
     avatar: "https://picsum.photos/id/91/200",
     src: "/images/scribble/scribble1.jpg",
-    thumbnail: "/images/scribble/scribble1.jpg",
+    thumbnail: "/images/explore/EXPLORE1.png",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const postData = [
     username: "iyushjain",
     avatar: "https://picsum.photos/id/91/200",
     src: "https://replicate.delivery/pbxt/SCiO1SBkqj7gL5cTsq8AXz5pIwPajeiWbb9s17KtyQ2G3OFIA/gen_sound.wav",
-    thumbnail: "/images/scribble/scribble1.jpg",
+    thumbnail: "/images/explore/EXPLORE2.png",
   },
   {
     id: 3,
@@ -27,6 +27,6 @@ export const postData = [
     username: "iyushjain",
     avatar: "https://picsum.photos/id/91/200",
     src: "/images/scribble/scribble1.jpg",
-    thumbnail: "/images/scribble/scribble1.jpg",
+    thumbnail: "/images/explore/EXPLORE3.png",
   },
 ];
