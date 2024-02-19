@@ -17,7 +17,7 @@ function InteractivePosts() {
         </p>
       </div>
 
-      <Link href="/">
+      <Link href="/login">
         <button className="w-[177px] h-[45px] mt-[400px] justify-center rounded-[8px] bg-[#262626] text-[14px] text-white ">
           explore
         </button>

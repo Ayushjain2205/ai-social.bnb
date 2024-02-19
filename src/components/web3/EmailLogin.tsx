@@ -202,7 +202,7 @@ export default function EmailSignIn() {
           onChange={(e) => setEmail(e.target.value)}
         />
         <button
-          className="w-full h-10 my-2 flex justify-center items-center bg-primary text-white    rounded-lg"
+          className="w-full h-10 my-2 flex justify-center items-center bg-primary text-white rounded-lg"
           onClick={handleEmailEntered}
         >
           Sign In

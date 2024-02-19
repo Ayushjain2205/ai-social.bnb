@@ -136,3 +136,7 @@ body {
 .fade-in {
   animation: fadeIn 1s ease-in-out;
 }
+
+.particle-pwe-btn {
+  display: none;
+}
