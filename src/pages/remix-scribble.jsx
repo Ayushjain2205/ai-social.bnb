@@ -352,9 +352,11 @@ const remix = () => {
               Redraw
             </button>
           )}
-          <button className="bg-[#262626] w-[130px] h-[40px] mr-[12px]  rounded-[8px] text-white ">
-            Post
-          </button>
+          <Link href="/post/15">
+            <button className="bg-[#262626] w-[130px] h-[40px] mr-[12px]  rounded-[8px] text-white ">
+              Post
+            </button>
+          </Link>
         </div>
       </div>
     </>

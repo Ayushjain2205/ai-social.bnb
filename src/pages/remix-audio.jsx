@@ -263,9 +263,11 @@ const remix = () => {
         <button className="bg-none text-[#FF5705] h-[40px] text-[16px] ml-[12px] ">
           Redo
         </button>
-        <button className="bg-[#262626] w-[130px] h-[40px] mr-[12px]  rounded-[8px] text-white ">
-          Post
-        </button>
+        <Link href="/post/23">
+          <button className="bg-[#262626] w-[130px] h-[40px] mr-[12px]  rounded-[8px] text-white ">
+            Post
+          </button>
+        </Link>
       </div>
     </div>
   );
