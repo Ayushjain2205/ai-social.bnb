@@ -90,7 +90,7 @@ export const postData = [
     remixid: "future-of-work",
     type: "dynamic",
     username: "yushiyushi",
-    avatar: "https://picsum.photos/id/105/200",
+    avatar: "https://picsum.photos/id/10/200",
     src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285179/feed/explore/loqurcidlslbwl6oodau.png",
     thumbnail:
       "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285179/feed/explore/loqurcidlslbwl6oodau.png",
