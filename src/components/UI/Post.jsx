@@ -55,6 +55,19 @@ const Post = ({
     reward();
     console.log(`Emoji clicked: ${selectedEmoji}`);
     // Add additional actions here if needed
+    setTimeout(() => {
+      toast(
+        (t) => (
+          <div className="flex flex-row gap-[10px] items-center">
+            <img src="/icons/coin.svg" alt="" /> You earned{" "}
+            <span className="font-bold">5</span> coins
+          </div>
+        ),
+        {
+          duration: 3000,
+        }
+      );
+    }, 2000);
   };
 
   // Function to toggle the comment section visibility
@@ -71,19 +84,6 @@ const Post = ({
     if (overlayVisible) {
       // Only set the emoji to 🎁 if closing the overlay
       setEmoji("🎁");
-      setTimeout(() => {
-        toast(
-          (t) => (
-            <div className="flex flex-row gap-[10px] items-center">
-              <img src="/icons/coin.svg" alt="" /> You earned{" "}
-              <span className="font-bold">5</span> coins
-            </div>
-          ),
-          {
-            duration: 3000,
-          }
-        );
-      }, 2000);
     } else {
       // Ensure the emoji is reset or set to any other value when opening the overlay
       // to avoid immediate triggering of the emoji rain due to the useEffect above.
@@ -311,8 +311,16 @@ const Post = ({
                 />
               </svg>
             </div>
-            <p className="text-[12px] mt-[25px] mb-[8px]">How many tokens?</p>
-            <div className="flex h-[40px] rounded-[6px] w-full border-black border-[0.5px]"></div>
+            <p className="text-[12px] mt-[25px] mb-[8px]">How many coins?</p>
+            <div className="flex flex-row gap-[12px] h-[40px] rounded-[6px] p-[11px] w-full border-black border-[0.5px]">
+              <img src="/icons/coin.svg" alt="" />
+              <input
+                type="number"
+                className="border border-none outline-none"
+                name=""
+                id=""
+              />
+            </div>
             <div className="flex w-full justify-end mt-[29px]">
               <button
                 onClick={toggleOverlay}

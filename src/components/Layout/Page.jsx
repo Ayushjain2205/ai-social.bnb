@@ -71,7 +71,7 @@ const Page = ({
             <div className="flex flex-col w-[90px] h-[40px] rounded-full bg-[#616161] opacity-80">
               <div className="flex flex-row h-full gap-[14px] items-center justify-center">
                 <img src="/icons/coin.svg" alt="" />
-                <span className="text-white text-[14px]">23</span>
+                <span className="text-white text-[14px]">230</span>
               </div>
             </div>
             <div className="flex flex-col items-center justify-center w-[40px] h-[40px] rounded-full bg-[#616161] opacity-80">
