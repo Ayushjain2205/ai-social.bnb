@@ -10,6 +10,7 @@ import {
 } from "@thirdweb-dev/react";
 import { ACCOUNT_FACTORY_ADDRESS } from "../constants/constants";
 import { useRouter } from "next/router";
+import { postData } from "../helpers/postdata";
 
 const profile = () => {
   const address = useAddress();
@@ -25,16 +26,34 @@ const profile = () => {
     [address]
   );
 
+  const [imageIndex, setImageIndex] = useState(0);
+  const filteredImages = postData
+    .filter((post) => post.type === "dynamic" || post.type === "scribble")
+    .map((post) => post.thumbnail);
+
+  const nextImage = () => {
+    setImageIndex((prevIndex) => (prevIndex + 1) % filteredImages.length);
+  };
+
+  const prevImage = () => {
+    setImageIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + filteredImages.length) % filteredImages.length
+    );
+  };
+
   return (
     <Page back="/">
       <div className="flex flex-col">
         <div className="flex flex-row px-[30px] gap-[24px] items-center mt-[30px]">
           <svg
+            onClick={prevImage}
             xmlns="http://www.w3.org/2000/svg"
             width="17"
             height="16"
             viewBox="0 0 17 16"
             fill="none"
+            className="cursor-pointer"
           >
             <path
               fill-rule="evenodd"
@@ -43,13 +62,19 @@ const profile = () => {
               fill="#262626"
             />
           </svg>
-          <img src="/images/placeholder.png" alt="" />
+          <img
+            src={filteredImages[imageIndex]}
+            alt=""
+            className="w-[241px] h-[249px] rounded-[8px]"
+          />
           <svg
+            onClick={nextImage}
             xmlns="http://www.w3.org/2000/svg"
             width="17"
             height="16"
             viewBox="0 0 17 16"
             fill="none"
+            className="cursor-pointer"
           >
             <path
               fill-rule="evenodd"
