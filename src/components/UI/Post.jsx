@@ -311,7 +311,7 @@ const Post = ({
                 />
               </svg>
             </div>
-            <p className="text-[12px] mt-[25px] mb-[8px]">How many coins?</p>
+            <p className="text-[12px] mt-[25px] mb-[14px]">How many coins?</p>
             <div className="flex flex-row gap-[12px] h-[40px] rounded-[6px] p-[11px] w-full border-black border-[0.5px]">
               <img src="/icons/coin.svg" alt="" />
               <input
