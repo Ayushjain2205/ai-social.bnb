@@ -311,4 +311,64 @@ export const postData = [
     thumbnail:
       "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285176/feed/explore/tnpux8vumljcdboyllht.png",
   },
+  {
+    id: 26,
+    title: "real time photo generation",
+    tag: "weird food",
+    remixid: "weird-food",
+    type: "dynamic",
+    username: "issuepissue",
+    avatar: "https://picsum.photos/id/110/200",
+    src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708289732/feed/explore/v7ufe6tlcgxu2ix2rqe9.png",
+    thumbnail:
+      "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708289732/feed/explore/v7ufe6tlcgxu2ix2rqe9.png",
+  },
+  {
+    id: 27,
+    title: "real time photo generation",
+    tag: "weird food",
+    remixid: "weird-food",
+    type: "dynamic",
+    username: "issuepissue",
+    avatar: "https://picsum.photos/id/110/200",
+    src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708289732/feed/explore/c40dcl3hsrxlrjuqfufq.png",
+    thumbnail:
+      "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708289732/feed/explore/c40dcl3hsrxlrjuqfufq.png",
+  },
+  {
+    id: 28,
+    title: "real time photo generation",
+    tag: "weird food",
+    remixid: "weird-food",
+    type: "dynamic",
+    username: "issuepissue",
+    avatar: "https://picsum.photos/id/110/200",
+    src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708289732/feed/explore/sdhcfmlbu6npm83tjs7v.png",
+    thumbnail:
+      "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708289732/feed/explore/sdhcfmlbu6npm83tjs7v.png",
+  },
+  {
+    id: 29,
+    title: "real time photo generation",
+    tag: "weird food",
+    remixid: "weird-food",
+    type: "dynamic",
+    username: "issuepissue",
+    avatar: "https://picsum.photos/id/110/200",
+    src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708289723/feed/explore/cgkm7havxmyyx7cajtzo.png",
+    thumbnail:
+      "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708289723/feed/explore/cgkm7havxmyyx7cajtzo.png",
+  },
+  {
+    id: 30,
+    title: "real time photo generation",
+    tag: "weird food",
+    remixid: "weird-food",
+    type: "dynamic",
+    username: "issuepissue",
+    avatar: "https://picsum.photos/id/110/200",
+    src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285176/feed/explore/d77krrethkx11tl2vynj.png",
+    thumbnail:
+      "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285176/feed/explore/d77krrethkx11tl2vynj.png",
+  },
 ];
