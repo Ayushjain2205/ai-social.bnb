@@ -3,7 +3,8 @@ import Link from "next/link";
 import Xpattern from "./UI/Xpattern";
 import { postData } from "../helpers/postdata";
 
-const InfiniteCanvas = () => {
+// Add the `remixed` prop to the component signature
+const InfiniteCanvas = ({ remixid = null }) => {
   const [showXPattern, setShowXPattern] = useState(true);
 
   useEffect(() => {
@@ -24,7 +25,16 @@ const InfiniteCanvas = () => {
   };
 
   const divCount = 120; // Define the total number of divs/thumbnails you want to display
-  const randomizedThumbnails = randomizeAndRepeatThumbnails(postData, divCount);
+
+  // Filter posts by the `remixed` tag if it is provided
+  const filteredPosts = remixid
+    ? postData.filter((post) => post.remixid === remixid)
+    : postData;
+
+  const randomizedThumbnails = randomizeAndRepeatThumbnails(
+    filteredPosts,
+    divCount
+  );
 
   return (
     <div className="relative w-[390px]">

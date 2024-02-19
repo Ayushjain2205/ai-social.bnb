@@ -7,7 +7,16 @@ import Scribble from "./Scribble";
 import toast from "react-hot-toast";
 import Comments from "./Comments";
 
-const Post = ({ tag, title, username, avatar, type = "image", src, id }) => {
+const Post = ({
+  tag,
+  title,
+  username,
+  avatar,
+  type = "image",
+  src,
+  id,
+  remixid,
+}) => {
   // State to toggle comment section visibility
   const [showComments, setShowComments] = useState(false);
   // State to toggle emoji panel visibility
@@ -252,7 +261,7 @@ const Post = ({ tag, title, username, avatar, type = "image", src, id }) => {
               />
             </svg>
           </Link>
-          <Link href="/">
+          <Link href={`/?remixid=${remixid}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="21"

@@ -32,6 +32,7 @@ const PostPage = () => {
         username={postToDisplay.username}
         avatar={postToDisplay.avatar}
         src={postToDisplay.src}
+        remixid={postToDisplay.remixid}
       />
     </Page>
   );
