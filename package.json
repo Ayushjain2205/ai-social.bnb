@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@particle-network/auth-core-modal": "^1.3.6",
-    "@particle-network/connectkit": "^1.3.5",
     "@thirdweb-dev/react": "^4.4.8",
     "@thirdweb-dev/sdk": "^4.0.35",
     "ahooks": "^3.7.10",

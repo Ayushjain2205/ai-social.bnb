@@ -21,7 +21,7 @@ const WelcomeScreen = () => {
     if (screenIndex < 4) {
       setScreenIndex(screenIndex + 1);
     } else {
-      router.push("/login"); // On the last screen, redirect to login
+      router.push("/wallet"); // On the last screen, redirect to login
     }
   };
 
